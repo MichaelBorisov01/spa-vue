@@ -1,56 +1,35 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-main>
-      <HelloWorld />
-    </v-main>
+    <navBar app :headerData="headerData" v-on:switchTab="tab => (this.headerData.currentTab = tab)" />
+    <keep-alive>
+      <v-component :is="currentComponent"></v-component>
+    </keep-alive>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
-
+import navBar from "./components/NavBar.vue";
 export default {
-  name: "App",
-
-  components: {
-    HelloWorld,
-  },
-
+  name: "app",
   data: () => ({
-    //
+    headerData: {
+      tabs: ["OrderBook", "MySymbol"],
+      currentTab: "OrderBook",
+    },
   }),
+  computed: {
+    currentComponent() {    //при изменении currentTab меняем компонент
+      return this.headerData.currentTab;
+    }
+  },
+  components: {
+    navBar,
+    OrderBook: () => import('./components/OrderBook.vue'),  // импорты подгрузятся, если они необходимы 
+    MySymbol: () => import('./components/MySymbol.vue'),    // ленивая загрузка
+  },
 };
 </script>
+
+<style>
+
+</style>

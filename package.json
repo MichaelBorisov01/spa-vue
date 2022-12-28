@@ -9,9 +9,13 @@
   },
   "dependencies": {
     "axios": "^1.2.1",
-    "core-js": "^3.8.3",
+    "core-js": "^3.27.0",
+    "crypto-js": "^4.1.1",
+    "isomorphic-ws": "^4.0.1",
+    "qs": "^6.7.0",
     "vue": "^2.6.14",
-    "vuetify": "^2.6.0"
+    "vuetify": "^2.6.0",
+    "ws": "^7.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -20,15 +24,14 @@
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.0.3",
-    "prettier": "^2.4.1",
     "sass": "~1.32.0",
     "sass-loader": "^10.0.0",
     "vue-cli-plugin-vuetify": "^2.5.8",
     "vue-template-compiler": "^2.6.14",
-    "vuetify-loader": "^1.7.0"
+    "vuetify-loader": "^1.7.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   },
   "eslintConfig": {
     "root": true,
@@ -37,8 +40,7 @@
     },
     "extends": [
       "plugin:vue/essential",
-      "eslint:recommended",
-      "plugin:prettier/recommended"
+      "eslint:recommended"
     ],
     "parserOptions": {
       "parser": "@babel/eslint-parser"
@@ -49,5 +51,25 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "description": "## Project setup ``` npm install ```",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelBorisov01/spa-vue.git"
+  },
+  "keywords": [
+    "javascript",
+    "js",
+    "webpack",
+    "spa",
+    "vue",
+    "vuetify"
+  ],
+  "author": "Michael Borisov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MichaelBorisov01/spa-vue/issues"
+  },
+  "homepage": "https://github.com/MichaelBorisov01/spa-vue#readme"
 }
