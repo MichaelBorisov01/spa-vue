@@ -3,7 +3,8 @@
     <div class="symbol-type">Current symbol = {{ currentSymbol }}</div>
     <div class="wrapper">
 
-      <v-select class="select" v-model="currentSymbol" :items="options" label="Change symbol" solo />
+      <v-select class="select" v-model="currentSymbol" :items="options" label="Change symbol" solo
+        style="margin: 15px auto;" />
 
     </div>
   </div>
@@ -43,6 +44,5 @@ export default {
 
 .select {
   max-width: 250px;
-  margin: 15px auto;
 }
 </style>
